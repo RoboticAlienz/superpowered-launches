@@ -224,10 +224,9 @@ def pid_yaw_angle(heading: int, amount: int | float,
 
 
 def main():
-    # =========2nd Launch=========
     hub.motion_sensor.reset_yaw_angle()
-    # move towards bucket
-    #motors.move(1600, 'degrees', speed=80)
+    # move towards
+    # motors.move(1600, 'degrees', speed=80)
     pid_yaw_angle(0, 1600, speed=80)
     # leave energy units
     up_left.run_for_degrees(1260, 70)
@@ -243,17 +242,17 @@ def main():
     gyro_turn(60, -40, True, False)
     motors.move(60, 'degrees', speed=-80)
     # move towards
-    #pid_yaw_angle(130, 800, speed=80)
+    # pid_yaw_angle(130, 800, speed=80)
     motors.move(800, 'degrees', speed=80)
     gyro_turn(40, -40, False, False)
-    #pid_yaw_angle(160, 700, speed=80)
+    # pid_yaw_angle(160, 700, speed=80)
     motors.move(700, 'degrees', speed=80)
     up_right.run_for_degrees(150, 100)
     # drop energy units
     motors.move(100, 'degrees', speed=95)
     motors.move(300, 'degrees', speed=90)
     gyro_turn(100, -40, False, False)
-    #pid_yaw_angle(90, 900, speed=100)
+    # pid_yaw_angle(90, 900, speed=100)
     motors.move(900, 'degrees', speed=100)
     gyro_turn(90, -40, False, False)
 
@@ -266,8 +265,7 @@ def gyro_square_off(heading: int):
 
 
 def main_v2():
-    # =========2nd Launch=========
-    # go to the energy storage
+    # got to the energy storage
     hub.motion_sensor.reset_yaw_angle()
     pid_yaw_angle(0, 1000, speed=70)
     gyro_turn(45, 30, True, False)
@@ -291,14 +289,14 @@ def main_v2():
     # move towards power plant
     # motors.move(500, 'degrees', speed=-70)
     pid_yaw_angle(0, 420, speed=-60)
-    #gyro_turn(46, 30, True, False)
+    # gyro_turn(46, 30, True, False)
     gyro_turn(50, 30, True, False)
     # motors.move(880, 'degrees', speed=70)
     pid_yaw_angle(48, 815, speed=70)
     up_right.run_for_degrees(300, 100)
     wait_for_seconds(1)
     motors.move(150, 'degrees', speed=50)
-    #pid_yaw_angle(179, 870, speed=80)
+    # pid_yaw_angle(179, 870, speed=80)
     # move arm up
     # drop energy units
     # motors.move(100, 'degrees', speed=90)'''
@@ -306,14 +304,14 @@ def main_v2():
     motors.move(190, 'degrees', speed=-60)
     gyro_turn(-25, 50, False, False)
     motors.move(1500, 'degrees', speed=90)
-    #gyro_turn(0, 30, False, False)
-    #motors.move(800, 'degrees', speed=90)
+    # gyro_turn(0, 30, False, False)
+    # motors.move(800, 'degrees', speed=90)
     # move back from power plant
-    #motors.move(200, 'degrees', speed=-40)
+    # motors.move(200, 'degrees', speed=-40)
     # turn to launch area
-    #gyro_turn(-90, -40, False, False)
+    # gyro_turn(-90, -40, False, False)
     # move forward to launch area
-    #motors.move(1600, 'degrees', speed=60)
+    # motors.move(1600, 'degrees', speed=60)
     raise SystemExit
 
 

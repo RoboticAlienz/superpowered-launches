@@ -230,7 +230,7 @@ def main_v4():
     # hand
     pid_yaw_angle(0, 1115, speed=60)
     for i in range(3):
-        up_right.run_for_degrees(430, 100)
+        up_right.run_for_degrees(490, 100)
         up_right.run_for_degrees(300, -100)
     motors.move(250, 'degrees', speed=-90)
     gyro_turn(50, 30, True, False)
@@ -239,7 +239,7 @@ def main_v4():
     pid_yaw_angle(90, 430, speed=70)
     up_left.run_for_degrees(-560, 90)
     # hybrid car
-    up_left.run_for_degrees(600, 100)
+    up_left.run_for_degrees(500, 100)
     motors.move(160, 'degrees', speed=90)
     gyro_turn(47, 50, False, True)
     motors.move(140, 'degrees', speed=60)
