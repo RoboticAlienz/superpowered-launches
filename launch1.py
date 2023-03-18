@@ -32,21 +32,29 @@ r_col = ColorSensor('E')
 
 
 def gyro_turn(target: int, speed: int, right: bool, right_wheel: bool) -> None:
-    if right:
-        if right_wheel:
-            motors.start_tank(left_speed=0, right_speed=-speed)
+
+    if (target >=0 and right) or (target <=0 and not right):
+
+        if right:
+            if right_wheel:
+                motors.start_tank(left_speed=0, right_speed=-speed)
+            else:
+                motors.start_tank(left_speed=speed, right_speed=0)
+            while hub.motion_sensor.get_yaw_angle() < target:
+                pass
         else:
-            motors.start_tank(left_speed=speed, right_speed=0)
-        while hub.motion_sensor.get_yaw_angle() < target:
-            pass
+            if right_wheel:
+                motors.start_tank(left_speed=0, right_speed=speed)
+            else:
+                motors.start_tank(left_speed=-speed, right_speed=0)
+            while hub.motion_sensor.get_yaw_angle() > target:
+                pass
+        motors.stop()
+
     else:
-        if right_wheel:
-            motors.start_tank(left_speed=0, right_speed=speed)
-        else:
-            motors.start_tank(left_speed=-speed, right_speed=0)
-        while hub.motion_sensor.get_yaw_angle() > target:
-            pass
-    motors.stop()
+        print("Wrong sign on degrees or wronr boolean value on 'right' !!!")
+    
+
 
 
 def accelerate(amount: int, start_speed: int, end_speed: int) -> None:
