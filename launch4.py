@@ -235,14 +235,15 @@ def main_v4():
     motors.move(250, 'degrees', speed=-90)
     gyro_turn(50, 30, True, False)
     motors.move(700, 'degrees', speed=70)
+    # hand
     gyro_turn(90, 30, True, False)
     pid_yaw_angle(90, 430, speed=70)
     up_left.run_for_degrees(-560, 90)
-    # hybrid car
     up_left.run_for_degrees(500, 100)
+    # hybrid car
     motors.move(160, 'degrees', speed=90)
     gyro_turn(47, 50, False, True)
-    motors.move(140, 'degrees', speed=60)
+    motors.move(160, 'degrees', speed=60)
     up_right.run_for_degrees(800, 80)
     up_right.run_for_degrees(200, -80)
     motors.move(140, 'degrees', speed=-90)
