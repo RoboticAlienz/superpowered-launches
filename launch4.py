@@ -234,7 +234,7 @@ def main_v4():
         up_right.run_for_degrees(300, -100)
     up_right.run_for_degrees(490, 100)
     up_right.run_for_degrees(280, -100)    
-    motors.move(310, 'degrees', speed=-90)
+    motors.move(280, 'degrees', speed=-90)
     gyro_turn(50, 15, True, False)
     # motors.move(700, 'degrees', speed=70)
     pid_yaw_angle(50, 700, speed=70)
