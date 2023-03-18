@@ -258,7 +258,7 @@ def main_v3():
     # move forward energy units
     motors.move(160, 'degrees', speed=-80)
     gyro_turn(-90, 50, False, False)
-    motors.move(570, 'degrees', speed=90)
+    motors.move(500, 'degrees', speed=90)
     gyro_turn(0, 40, True, False)
     motors.move(300, 'degrees', speed=60)
     motors.move(200, 'degrees', speed=-90)
