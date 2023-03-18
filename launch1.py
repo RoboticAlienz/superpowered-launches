@@ -278,21 +278,18 @@ def main():
 
     # raise left arm
 
-    # up_left.run_for_degrees(300, -90)
-
     # move forward
 
-    # motors.move(200, 'degrees', speed=100)
-    # motors.move(300, 'degrees', speed=-90)
-    # gyro_turn(-125, 50, True, False)
+    motors.move(200, 'degrees', speed=100)
+    motors.move(300, 'degrees', speed=-90)
+    gyro_turn(-125, 50, True, False)
 
     # get water (raise and lower left arm)
-    up_left.run_for_degrees(270, 90)
-    up_left.run_for_degrees(270, -90)
-    # turn left to get energy unit
     gyro_turn(-134, 30, False, False)
+    up_left.run_for_degrees(320, -90)
+    # turn left to get energy unit
     # move backwards
-    motors.move(252, 'degrees', speed=-80)
+    motors.move(252, 'degrees', speed=80)
     # left arm up
     up_left.run_for_degrees(300, 90)
     # turn right
