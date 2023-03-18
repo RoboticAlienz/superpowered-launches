@@ -229,26 +229,29 @@ def main_v4():
     hub.motion_sensor.reset_yaw_angle()
     # hand
     pid_yaw_angle(0, 1115, speed=60)
-    for i in range(3):
+    for i in range(2):
         up_right.run_for_degrees(490, 100)
         up_right.run_for_degrees(300, -100)
+    up_right.run_for_degrees(490, 100)
+    up_right.run_for_degrees(280, -100)    
     motors.move(250, 'degrees', speed=-90)
-    gyro_turn(50, 30, True, False)
-    motors.move(700, 'degrees', speed=70)
+    gyro_turn(50, 15, True, False)
+    # motors.move(700, 'degrees', speed=70)
+    pid_yaw_angle(50, 700, speed=70)
     # hand
-    gyro_turn(90, 30, True, False)
-    pid_yaw_angle(90, 430, speed=70)
+    gyro_turn(94, 15, True, False)
+    pid_yaw_angle(94, 470, speed=70)
     up_left.run_for_degrees(-560, 90)
     up_left.run_for_degrees(500, 100)
     # hybrid car
-    motors.move(150, 'degrees', speed=90)
+    motors.move(160, 'degrees', speed=90)
     gyro_turn(47, 50, False, True)
     motors.move(160, 'degrees', speed=60)
     up_right.run_for_degrees(800, 100)
     up_right.run_for_degrees(200, -100)
     motors.move(140, 'degrees', speed=-90)
     gyro_turn(120, 50, True, False)
-    motors.move(1600, 'degrees', speed=90)
+    motors.move(1800, 'degrees', speed=90)
 
     raise SystemExit
 
