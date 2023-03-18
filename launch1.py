@@ -89,11 +89,11 @@ def color_wait(speed: int) -> None:
     motors.stop()
 
 
-def pid_yaw_angle(heading: int, amount: int | float,
+def pid_yaw_angle(heading: int, amount: int | float, # type: ignore
                   condition: str = 'degrees', speed: int = 60,
                   kp: float = 1.4, ki: float = 0.01, kd: float = 2,
                   accel: bool = True, a: float = 0.7, decel: bool = False,
-                  ad: float = 0.5, decelt: float | int = 80) -> None:
+                  ad: float = 0.5, decelt: float | int = 80) -> None: # type: ignore
     # Cache references locally (optimization)
     yaw = hub.motion_sensor.get_yaw_angle
     pair_s = motors.start_tank_at_power
