@@ -244,7 +244,7 @@ def main():
     for i in range(3):
         wait_for_seconds(0.8)
         color_wait(70)
-        # motors.move(128, 'degrees', speed=55)
+        #motors.move(128, 'degrees', speed=55)
         wait_for_seconds(0.8)
         motors.move(125, 'degrees', speed=-60)
 
@@ -253,12 +253,12 @@ def main():
     gyro_turn(-50, 40, False, False)
     motors.move(485, 'degrees', speed=80)
     gyro_turn(-90, 30, False, True)
-    # up_right.run_for_degrees(700, -100)
+    #up_right.run_for_degrees(700, -100)
     # move towards oil
     # motor.move(1680, 'degrees', speed=100)
-    # pid_yaw_angle(-92, 1750, speed=80)
-    # pid_yaw_angle(-92, 1730, speed=80)
-    pid_yaw_angle(-91, 1583, speed=75)
+    #pid_yaw_angle(-92, 1750, speed=80)
+    #pid_yaw_angle(-92, 1730, speed=80)
+    pid_yaw_angle(-91, 1533, speed=75)
     # raise and lower arm 3 times
     # for i in range (3):
     # up_right.run_for_degrees(300, 100)
@@ -267,29 +267,24 @@ def main():
     # move towards blue
     hub.motion_sensor.reset_yaw_angle()
     # move backwards
-    # motors.move(40, 'degrees', speed=-80)
+    #motors.move(40, 'degrees', speed=-80)
     # turn left
     gyro_turn(-44, 40, False, False)
     # move forward
-    motors.move(585, 'degrees', speed=80)
+    motors.move(825, 'degrees', speed=80)
     # turn left to get water
-
-    # gyro_turn(-127, 40, False, False)
-
+    gyro_turn(-127, 40, False, False)
     # raise left arm
-
+    up_left.run_for_degrees(300, -90)
     # move forward
-
     motors.move(200, 'degrees', speed=100)
-    motors.move(300, 'degrees', speed=-90)
-    gyro_turn(-125, 50, True, False)
-
     # get water (raise and lower left arm)
-    gyro_turn(-134, 30, False, False)
-    up_left.run_for_degrees(320, -90)
+    up_left.run_for_degrees(270, 90)
+    up_left.run_for_degrees(270, -90)
     # turn left to get energy unit
+    gyro_turn(-134, 30, False, False)
     # move backwards
-    motors.move(252, 'degrees', speed=80)
+    motors.move(252, 'degrees', speed=-80)
     # left arm up
     up_left.run_for_degrees(300, 90)
     # turn right
