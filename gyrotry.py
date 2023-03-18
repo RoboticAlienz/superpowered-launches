@@ -223,5 +223,8 @@ def pid_yaw_angle(heading: int, amount: int | float,
         motors.stop()
 
 def main_try():
-    gyro_turn(90, 40, False, True)
+    gyro_turn(-90, 40, False, True)
     motors.move(100, 'degrees', speed=90)
+
+
+main_try()
