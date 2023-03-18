@@ -2,8 +2,8 @@
 
 import time
 from spike import PrimeHub, LightMatrix, Button, StatusLight, ForceSensor, MotionSensor, Speaker, ColorSensor, App, DistanceSensor, Motor, MotorPair
-from spike.control import wait_for_seconds, wait_until, Timer
-from math import *
+from spike.control import wait_for_seconds, wait_until, Timer  # type: ignore
+from math import *  # type: ignore
 
 
 def time_f(func):
@@ -229,7 +229,7 @@ def main_try():
 
 def main_test():
     hub.motion_sensor.reset_yaw_angle()
-    gyro_turn(-90, 50, True, False)
+    gyro_turn(-90, 50, False, True)
 
 
 
