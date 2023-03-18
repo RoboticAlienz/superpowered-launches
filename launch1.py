@@ -270,13 +270,13 @@ def main():
     # turn left
     gyro_turn(-44, 40, False, False)
     # move forward
-    motors.move(825, 'degrees', speed=80)
+    motors.move(815, 'degrees', speed=80)
     # turn left to get water
     gyro_turn(-127, 40, False, False)
     # raise left arm
     up_left.run_for_degrees(300, -90)
     # move forward
-    motors.move(200, 'degrees', speed=100)
+    motors.move(210, 'degrees', speed=100)
     # get water (raise and lower left arm)
     up_left.run_for_degrees(270, 90)
     up_left.run_for_degrees(270, -90)
