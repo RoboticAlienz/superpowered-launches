@@ -228,7 +228,7 @@ def main():
     # =========1st Launch=========
     hub.motion_sensor.reset_yaw_angle()
     # move forward to television
-    accelerate(960, 50, 60)
+    accelerate(960, 40, 50)
     wait_for_seconds(1)
     # move back from television
     motors.move(220, 'degrees', speed=-90)
@@ -241,8 +241,7 @@ def main():
     motors.move(360, 'degrees', speed=60)
     wait_for_seconds(0.8)
     motors.move(230, 'degrees', speed=-60)
-    for i in range(3):
-        wait_for_seconds(0.8)
+    for i in range(2):
         color_wait(70)
         #motors.move(128, 'degrees', speed=55)
         wait_for_seconds(0.8)
