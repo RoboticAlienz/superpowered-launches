@@ -228,15 +228,18 @@ def main_v3():
     # move towards toy factory and take energy unit
     hub.motion_sensor.reset_yaw_angle()
     # move forwrd
-    motors.move(700, 'degrees', speed=60)
+    # motors.move(700, 'degrees', speed=60)
+    pid_yaw_angle(0, 690, speed=60)
     # turn left energy unit
-    gyro_turn(-53, 40, False, False)
+    gyro_turn(-52, 40, False, False)
     # move forward energy unit
-    motors.move(1350, 'degrees', speed=80)
+    #motors.move(1350, 'degrees', speed=80)
+    pid_yaw_angle(-52, 1400, speed=80)
     # turn left
-    gyro_turn(-100, 40, False, False)
+    gyro_turn(-111, 40, False, False)
     # move forward
-    motors.move(520, 'degrees', speed=60)
+    #motors.move(520, 'degrees', speed=60)
+    pid_yaw_angle(-111, 640, speed=60)
     # move left arm up
     up_left.run_for_degrees(300, 60)
     # gyro_turn(25, 50, True, False)
@@ -252,21 +255,25 @@ def main_v3():
     # turn right
     gyro_turn(-70, 50, True, False)
     # move forward energy units
-    motors.move(430, 'degrees', speed=90)
+    #motors.move(430, 'degrees', speed=90)
+    pid_yaw_angle(-70, 380, speed=90)
     gyro_turn(0, 40, True, True)
-    motors.move(350, 'degrees', speed=60)
+    #motors.move(350, 'degrees', speed=60)
+    pid_yaw_angle(0, 280, speed=60)
     # move forward energy units
-    motors.move(160, 'degrees', speed=-80)
+    #motors.move(160, 'degrees', speed=-80)
+    pid_yaw_angle(0, 110, speed=-80)
     gyro_turn(-90, 50, False, False)
-    motors.move(500, 'degrees', speed=90)
+    #motors.move(500, 'degrees', speed=90)
+    pid_yaw_angle(-90, 445, speed=60)
     gyro_turn(0, 40, True, False)
-    motors.move(300, 'degrees', speed=60)
-    motors.move(180, 'degrees', speed=-90)
+    #motors.move(300, 'degrees', speed=60)
+    pid_yaw_angle(0, 160, speed=60)
+    #motors.move(180, 'degrees', speed=-90)
+    pid_yaw_angle(0, 100, speed=-90)
     up_left.run_for_degrees(300, -60)
-    gyro_turn(-120, 40, False, False)
-    motors.move(1500, 'degrees', speed=90)
-    gyro_turn(-168, 40, False, False)
-    motors.move(1500, 'degrees', speed=90)
+    gyro_turn(-130, 40, False, False)
+    pid_yaw_angle(-130,1390, speed=90)
     raise SystemExit
 
 
