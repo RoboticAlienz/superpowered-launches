@@ -227,7 +227,7 @@ def main():
     hub.motion_sensor.reset_yaw_angle()
     # move towards
     # motors.move(1600, 'degrees', speed=80)
-    pid_yaw_angle(0, 1600, speed=80)
+    pid_yaw_angle(0, 1610, speed=80)
     # leave energy units
     up_left.run_for_degrees(1260, 70)
     up_left.run_for_degrees(200, -70)
@@ -267,7 +267,7 @@ def gyro_square_off(heading: int):
 def main_v2():
     # got to the energy storage
     hub.motion_sensor.reset_yaw_angle()
-    pid_yaw_angle(0, 1000, speed=70)
+    pid_yaw_angle(0, 1020, speed=70)
     gyro_turn(45, 30, True, False)
     pid_yaw_angle(45, 200, speed=70)
     gyro_turn(0, 30, False, True)
@@ -281,6 +281,7 @@ def main_v2():
     pid_yaw_angle(90, 1000, speed=70)
     gyro_turn(135, 30, True, False)
     pid_yaw_angle(135, 350, speed=50)
+    x = 180 - hub.motion_sensor.get_yaw_angle()
     hub.motion_sensor.reset_yaw_angle()
     # motors.move(400, 'degrees', speed=50)
     # drop last energy unit
@@ -290,9 +291,9 @@ def main_v2():
     # motors.move(500, 'degrees', speed=-70)
     pid_yaw_angle(0, 420, speed=-60)
     # gyro_turn(46, 30, True, False)
-    gyro_turn(50, 30, True, False)
+    gyro_turn(x+3, 30, True, False)
     # motors.move(880, 'degrees', speed=70)
-    pid_yaw_angle(48, 845, speed=70)
+    pid_yaw_angle(x+3, 830, speed=70)
     up_right.run_for_degrees(300, 100)
     wait_for_seconds(1)
     motors.move(150, 'degrees', speed=50)
