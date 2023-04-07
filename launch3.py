@@ -268,7 +268,7 @@ def main_v3():
     pid_yaw_angle(-90, 445, speed=60)
     gyro_turn(0, 40, True, False)
     #motors.move(300, 'degrees', speed=60)
-    pid_yaw_angle(0, 160, speed=60)
+    pid_yaw_angle(0, 150, speed=60)
     #motors.move(180, 'degrees', speed=-90)
     pid_yaw_angle(0, 100, speed=-90)
     up_left.run_for_degrees(300, -60)
